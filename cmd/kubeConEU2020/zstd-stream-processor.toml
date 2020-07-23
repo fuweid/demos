@@ -1,6 +1,6 @@
 [stream_processors]
   [stream_processors."zstd"]
     accepts = ["application/vnd.oci.image.layer.v1.tar+zstd"]
-    returns = "application/vnd.oci.image.layer.v1.tar+zstd"
+    returns = "application/vnd.oci.image.layer.v1.tar"
     path = "zstd"
     args = ["-dcf"]
