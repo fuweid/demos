@@ -31,7 +31,7 @@ var (
 
 var imageZstdConvertCommand = cli.Command{
 	Name:        "zstdconv",
-	Usage:       "Convert image layer into zstd type",
+	Usage:       "convert image layer into zstd type",
 	ArgsUsage:   "<src-image> <dst-image>",
 	Description: `Export images to an OCI tar[.gz] into zstd format`,
 	Action: func(context *cli.Context) error {
