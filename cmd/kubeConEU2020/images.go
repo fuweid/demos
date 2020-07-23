@@ -75,7 +75,6 @@ var imageZstdConvertCommand = cli.Command{
 			Name:   targetImage,
 			Target: newMfDesc,
 		}
-		fmt.Println(newImage.Target)
 		return createImage(ctx, cli.ImageService(), newImage)
 	},
 }
@@ -139,7 +138,6 @@ func zstdLayersConv(ctx context.Context, cs content.Store, manifest ocispec.Mani
 	for i, ch := range copyManifest.Layers {
 		labels[fmt.Sprintf("containerd.io/gc.ref.content.%d", i+1)] = ch.Digest.String()
 	}
-	fmt.Println(labels)
 
 	ref := remotes.MakeRefKey(ctx, desc)
 	if err := content.WriteBlob(ctx, cs, ref, bytes.NewReader(mb), desc, content.WithLabels(labels)); err != nil {
