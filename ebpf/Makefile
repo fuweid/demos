@@ -28,7 +28,8 @@ endif
 APPS := example-map-relo \
 		example-map-relo-btf \
 		example-field-offset-rewrite \
-		example-func-inline
+		example-func-inline \
+		example-func-noinline-in-same-sec
 
 BINARIES=$(patsubst %,$(OUTPUT)/%.bpf.o,$(APPS))
 
