@@ -5,7 +5,6 @@
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
 
 static __attribute__((noinline))
-SEC("tp/sched/sched_process_exec")
 u64 double_ts(u64 ts) {
 	return ts + ts;
 }
