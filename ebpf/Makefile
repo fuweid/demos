@@ -20,8 +20,14 @@ else
 	Q = @
 endif
 
+# strip or not
+ifeq ($(NOT_STRIP),1)
+	LLVM_STRIP = echo
+endif
+
 APPS := example-map-relo \
-		example-map-relo-btf
+		example-map-relo-btf \
+		example-field-offset-rewrite
 
 BINARIES=$(patsubst %,$(OUTPUT)/%.bpf.o,$(APPS))
 
