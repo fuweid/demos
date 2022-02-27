@@ -20,7 +20,8 @@ else
 	Q = @
 endif
 
-APPS := example-map-relo
+APPS := example-map-relo \
+		example-map-relo-btf
 
 BINARIES=$(patsubst %,$(OUTPUT)/%.bpf.o,$(APPS))
 
