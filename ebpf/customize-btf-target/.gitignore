@@ -1,0 +1,8 @@
+# Vagrant stuff
+.vagrant/
+
+# ignore ubuntu-xenial-16.04-cloudimg-console.log
+*.log
+
+.output
+minimal

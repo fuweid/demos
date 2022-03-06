@@ -1,0 +1,25 @@
+# vim: set filetype=ruby:
+
+VAGRANTFILE_API_VERSION = "2"
+
+# by default, the cpu number of vm is 2.
+cpu_number = ENV["VM_CPU_NUMBER"] || 2
+
+# by default, the memory of vm is 2GB.
+memory_limit = ENV["VM_MEMORY_LIMIT"] || 2048
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # provided by virtualbox
+  #
+  # - headless bootup
+  # - 4 cpu number or the value by env VM_CPU_NUMBER
+  # - 4GB memory or the value by env VM_MEMORY_LIMIT
+  config.vm.provider "virtualbox" do |vb|
+    # based on offical ubuntu server 18.04 (Bionic Beaver) builds
+    config.vm.box = "ubuntu/bionic64"
+
+    vb.gui    = false
+    vb.cpus   = cpu_number
+    vb.memory = memory_limit
+  end
+end
